@@ -2,7 +2,13 @@
 
 # Check if the script is being run as root
 if [ "$(whoami)" != "root" ]; then
-    echo "Please run the script as root user"
+    cat << "EOF"
+       ____  __    __  ____  ____  ____ 
+      (  __)(  )  (  )(  _ \(  __)(  _ \
+       ) _) / (_/\ )(  ) __/ ) _)  )   /
+      (____)\____/(__)(__)  (____)(__\_)
+Please run the script as root user
+EOF
     exit 1
 fi
 
@@ -11,9 +17,6 @@ apt update
 apt -y upgrade
 apt -y full-upgrade
 apt -y autoremove
-
-# Install gedit
-apt install -y gedit
 
 # Install Armitage and initialize PostgreSQL database for Metasploit
 apt install -y armitage
@@ -29,4 +32,13 @@ else
     chmod u+x Obsidian-1.8.9.AppImage
 fi
 
-echo "Your system is ready to use"
+cat << "EOF"
+   ____  __    ___  _  _ ____ 
+  (  __)(  )  / __)/ )( (  _ \
+   ) _) / (_/\__ \) \/ (    /
+  (____)\____(____)\____(__\_)
+Your system is ready to use!
+EOF
+
+# Self-destruct mechanism: Delete the script after execution
+rm -- "$0"
